@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wearstyle — T-shirts & Hoodies, delivered in Casablanca</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--fg:#141414;--mu:#6b6862;--card:#fff;--ln:#e3dfd6;--ac:#141414;--ac2:#fff;--ok:#1f7a4d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111110;--fg:#f2efe8;--mu:#9a968d;--card:#1b1a18;--ln:#2e2c28;--ac:#f2efe8;--ac2:#111110;--ok:#4cc38a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111110;--fg:#f2efe8;--mu:#9a968d;--card:#1b1a18;--ln:#2e2c28;--ac:#f2efe8;--ac2:#111110;--ok:#4cc38a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.5 Archivo,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.w{max-width:1160px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--ln)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 22px Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+nav{display:flex;gap:10px;align-items:center}
+nav a{color:var(--mu);text-decoration:none;font-size:14px;padding:6px 8px}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--ac);color:var(--ac2);border:0;border-radius:999px;padding:12px 22px;font-weight:600;font-size:15px}
+.btn.o{background:transparent;color:var(--fg);border:1px solid var(--ln)}
+.btn:disabled{opacity:.5}
+.cartb{position:relative;background:none;border:1px solid var(--ln);color:var(--fg);border-radius:999px;padding:8px 16px;font-weight:600}
+.cartb b{background:var(--ac);color:var(--ac2);border-radius:99px;padding:1px 7px;margin-left:6px;font-size:12px}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font:400 clamp(44px,7vw,84px)/1 "DM Serif Display",Georgia,serif;margin:0 0 18px;letter-spacing:-.01em}
+.hero p{color:var(--mu);font-size:18px;max-width:460px;margin:0 0 28px}
+.hero svg{width:100%;max-width:420px;justify-self:center}
+.strip{border-block:1px solid var(--ln);padding:18px 0;font-size:14px;color:var(--mu)}
+.strip .w{display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between}
+.strip b{color:var(--fg)}
+h2{font:400 36px "DM Serif Display",Georgia,serif;margin:56px 0 18px}
+.tabs{display:flex;gap:8px;margin-bottom:24px}
+.tabs button{background:none;border:1px solid var(--ln);color:var(--fg);border-radius:99px;padding:8px 18px;font-size:14px}
+.tabs button.on{background:var(--ac);color:var(--ac2);border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.art{aspect-ratio:1;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,var(--card));overflow:hidden}
+.art svg{width:62%}.art img{width:100%;height:100%;object-fit:cover}
+.card .i{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;font-size:17px;font-weight:600}.card .d{color:var(--mu);font-size:14px;margin:0}
+.pr{font-weight:800;font-size:18px}
+.sz{display:flex;gap:6px;flex-wrap:wrap}
+.sz button{min-width:38px;padding:6px 8px;border:1px solid var(--ln);background:none;color:var(--fg);border-radius:8px;font-size:13px}
+.sz button.on{background:var(--ac);color:var(--ac2);border-color:var(--ac)}
+.card .btn{margin-top:auto;width:100%;padding:11px}
+.about{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:24px 0 0}
+.about div{border:1px solid var(--ln);border-radius:16px;padding:22px;background:var(--card)}
+.about h4{margin:0 0 6px;font-size:16px}.about p{margin:0;color:var(--mu);font-size:14px}
+footer{margin-top:72px;border-top:1px solid var(--ln);padding:32px 0;color:var(--mu);font-size:14px}
+footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ov{position:fixed;inset:0;background:#0008;z-index:40;display:none}.ov.open{display:block}
+.pn{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:41;display:none;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));overflow:auto}
+.pn.open{display:flex}
+.pn h3{font:400 28px "DM Serif Display",serif;margin:0 0 14px;display:flex;justify-content:space-between;align-items:center}
+.x{background:none;border:0;color:var(--fg);font-size:26px;line-height:1}
+.li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--ln);align-items:center}
+.li .t{width:52px;height:52px;border-radius:10px;background:color-mix(in srgb,var(--c) 18%,var(--card));overflow:hidden;display:grid;place-items:center;flex:none}
+.li .t img{width:100%;height:100%;object-fit:cover}.li .t svg{width:70%}
+.li .n{flex:1;font-size:14px}.li .n small{color:var(--mu);display:block}
+.q{display:flex;align-items:center;gap:8px}.q button{width:26px;height:26px;border-radius:50%;border:1px solid var(--ln);background:none;color:var(--fg)}
+.tot{padding:14px 0;font-size:15px}.tot div{display:flex;justify-content:space-between;padding:3px 0;color:var(--mu)}.tot .g{color:var(--fg);font-weight:800;font-size:18px;padding-top:10px}
+label{display:block;font-size:13px;color:var(--mu);margin:12px 0 4px}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--card);color:var(--fg);font:inherit}
+.pay{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.pay label{margin:0;border:1px solid var(--ln);border-radius:12px;padding:12px;color:var(--fg);cursor:pointer;display:flex;gap:8px;align-items:flex-start;font-size:14px;background:var(--card)}
+.pay input{width:auto;margin-top:3px}.pay small{display:block;color:var(--mu)}
+.note{font-size:13px;color:var(--mu);margin-top:10px}
+.ok{color:var(--ok);font-weight:600}
+.err{color:#c0392b;font-size:13px;margin-top:8px}
+.adm .row{display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--ln);font-size:14px;align-items:center}
+.row button{background:none;border:1px solid var(--ln);color:var(--fg);border-radius:8px;padding:4px 10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:40px}.about{grid-template-columns:1fr}.hero svg{max-width:260px}nav a{display:none}}
+</style></head><body>
+<header><div class="w"><div class="logo">Wearstyle</div>
+<nav><a href="#shop">Shop</a><a href="#delivery">Delivery</a><button class="btn o" id="admB" hidden>Manage store</button><button class="cartb" id="cartB">Bag<b id="cnt">0</b></button></nav></div></header>
+
+<main>
+<section class="w hero"><div><h1>Everyday<br>pieces, made to be lived in.</h1><p>Heavyweight tees and soft fleece hoodies. Delivered to your door in Casablanca — pay in cash or by card when it arrives.</p><a href="#shop"><button class="btn">Shop the collection</button></a></div>
+<svg viewBox="0 0 120 110" aria-hidden="true"><path fill="var(--fg)" d="M28 28 L8 52 L22 66 L32 58 V104 H88 V58 L98 66 L112 52 L92 28 Q60 44 28 28Z"/><path fill="var(--bg)" opacity=".35" d="M44 24 Q60 6 76 24 Q60 36 44 24Z"/></svg></section>
+<div class="strip"><div class="w"><span><b>Casablanca delivery</b> · 24–48h</span><span><b>Cash or card</b> on delivery</span><span><b>Free shipping</b> over 500 MAD</span><span><b>Easy exchange</b> within 7 days</span></div></div>
+
+<section class="w" id="shop"><h2>The collection</h2>
+<div class="tabs" id="tabs"><button data-f="all" class="on">All</button><button data-f="tshirt">T-shirts</button><button data-f="hoodie">Hoodies</button></div>
+<div class="grid" data-r id="grid"></div></section>
+
+<section class="w" id="delivery"><h2>Delivery in Casablanca</h2>
+<div class="about"><div><h4>Fast local delivery</h4><p>We deliver across Casablanca — Maarif, Anfa, Ain Diab, Sidi Maarouf, Derb Sultan and more. Usually within 24–48 hours.</p></div><div><h4>Pay your way</h4><p>Cash on delivery, or pay by card with our courier’s portable terminal. Nothing to pay online in advance.</p></div><div><h4>Shipping fee</h4><p>30 MAD flat in Casablanca. Free for orders of 500 MAD or more.</p></div></div></section>
+</main>
+<footer><div class="w"><span>© Wearstyle · Casablanca, Morocco</span><span id="contact"></span></div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="pn" id="cart" data-r><h3>Your bag <button class="x" data-close>×</button></h3><div id="lines"></div></aside>
+<aside class="pn" id="co" data-r><h3>Checkout <button class="x" data-close>×</button></h3><div id="cob"></div></aside>
+<aside class="pn adm" id="adm" data-r><h3>Manage store <button class="x" data-close>×</button></h3><div id="admb"></div></aside>
+
+<script type="application/json" id="data">{"wa":"","products":[
+{"id":"p1","name":"Classic Tee — Off-white","price":180,"cat":"tshirt","color":"#e8e2d3","sizes":["S","M","L","XL"],"desc":"240 gsm heavyweight cotton, relaxed fit."},
+{"id":"p2","name":"Classic Tee — Black","price":180,"cat":"tshirt","color":"#1c1c1c","sizes":["S","M","L","XL"],"desc":"240 gsm heavyweight cotton, relaxed fit."},
+{"id":"p3","name":"Oversized Tee — Sage","price":220,"cat":"tshirt","color":"#8a9a7b","sizes":["S","M","L","XL"],"desc":"Dropped shoulders, soft garment-dyed finish."},
+{"id":"p4","name":"Essential Hoodie — Charcoal","price":420,"cat":"hoodie","color":"#3a3a3c","sizes":["S","M","L","XL"],"desc":"450 gsm brushed fleece, double-lined hood."},
+{"id":"p5","name":"Essential Hoodie — Sand","price":420,"cat":"hoodie","color":"#c9b79c","sizes":["S","M","L","XL"],"desc":"450 gsm brushed fleece, kangaroo pocket."},
+{"id":"p6","name":"Zip Hoodie — Navy","price":480,"cat":"hoodie","color":"#22304a","sizes":["S","M","L","XL"],"desc":"Full zip, ribbed cuffs, premium hardware."}]}</script>
+
+<script>
+var D=JSON.parse(document.getElementById('data').textContent),$=function(s){return document.querySelector(s)};
+var cart=[],filter='all',sel={},isAdm=false,NB=['Maarif','Anfa','Gauthier','Ain Diab','Californie','Sidi Maarouf','Bourgogne','Racine','Oasis','Derb Sultan','Hay Hassani','Ain Sebaa','Other (Casablanca)'];
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function mad(n){return n.toLocaleString('en-US')+' MAD'}
+function art(p){if(p.img)return'<img src="'+p.img+'" alt="'+esc(p.name)+'">';
+var h=p.cat==='hoodie';return'<svg viewBox="0 0 120 110"><path fill="'+esc(p.color)+'" stroke="#0003" d="'+(h?'M28 28 L8 52 L22 66 L32 58 V104 H88 V58 L98 66 L112 52 L92 28 Q60 44 28 28Z':'M30 20 L10 40 L25 55 L35 47 V100 H85 V47 L95 55 L110 40 L90 20 Q60 38 30 20Z')+'"/>'+(h?'<path fill="#0004" d="M44 24 Q60 6 76 24 Q60 36 44 24Z"/>':'')+'</svg>'}
+function grid(){var L=D.products.filter(function(p){return filter==='all'||p.cat===filter});
+$('#grid').innerHTML=L.length?L.map(function(p){var s=sel[p.id]||p.sizes[0];return'<div class="card"><div class="art" style="--c:'+esc(p.color)+'">'+art(p)+'</div><div class="i"><h3>'+esc(p.name)+'</h3><p class="d">'+esc(p.desc||'')+'</p><div class="pr">'+mad(p.price)+'</div><div class="sz">'+p.sizes.map(function(z){return'<button data-s="'+p.id+'|'+z+'" class="'+(z===s?'on':'')+'">'+esc(z)+'</button>'}).join('')+'</div><button class="btn" data-add="'+p.id+'">Add to bag</button></div></div>'}).join(''):'<p class="note">No products yet.</p>'}
+function sub(){return cart.reduce(function(a,l){return a+l.price*l.qty},0)}
+function ship(){var s=sub();return s===0||s>=500?0:30}
+function open(id){$('#ov').classList.add('open');['cart','co','adm'].forEach(function(x){$('#'+x).classList.toggle('open',x===id)})}
+function closeAll(){$('#ov').classList.remove('open');document.querySelectorAll('.pn').forEach(function(e){e.classList.remove('open')})}
+function save(){try{localStorage.setItem('ws_cart',JSON.stringify(cart))}catch(e){}}
+function renderCart(){var n=cart.reduce(function(a,l){return a+l.qty},0);$('#cnt').textContent=n;save();
+$('#lines').innerHTML=cart.length?cart.map(function(l,i){return'<div class="li"><div class="t" style="--c:'+esc(l.color)+'">'+art(l)+'</div><div class="n">'+esc(l.name)+'<small>Size '+esc(l.size)+' · '+mad(l.price)+'</small></div><div class="q"><button data-q="'+i+'|-1">−</button>'+l.qty+'<button data-q="'+i+'|1">+</button></div></div>'}).join('')+'<div class="tot"><div><span>Subtotal</span><span>'+mad(sub())+'</span></div><div><span>Shipping (Casablanca)</span><span>'+(ship()?mad(ship()):'Free')+'</span></div><div class="g"><span>Total</span><span>'+mad(sub()+ship())+'</span></div></div><button class="btn" id="goCo" style="width:100%">Checkout</button>':'<p class="note">Your bag is empty.</p>'}
+function checkout(){$('#cob').innerHTML='<div class="tot"><div class="g"><span>Total to pay on delivery</span><span>'+mad(sub()+ship())+'</span></div></div>'+
+'<label>Full name</label><input id="fn" autocomplete="name"><label>Phone (WhatsApp)</label><input id="ph" type="tel" autocomplete="tel" placeholder="06 12 34 56 78"><div class="two"><div><label>Neighborhood</label><select id="nb">'+NB.map(function(x){return'<option>'+x+'</option>'}).join('')+'</select></div><div><label>City</label><input value="Casablanca" disabled></div></div><label>Address</label><textarea id="ad" rows="2" placeholder="Street, building, floor, landmark"></textarea>'+
+'<label>Payment on delivery</label><div class="pay"><label><input type="radio" name="pm" value="Cash" checked><span>Cash<small>Pay the courier</small></span></label><label><input type="radio" name="pm" value="Card"><span>Card<small>Courier brings a terminal</small></span></label></div><label>Notes (optional)</label><input id="nt"><div class="err" id="er"></div><button class="btn" id="place" style="width:100%;margin-top:16px">Place order</button><p class="note">We deliver in Casablanca only. We’ll confirm your order by WhatsApp.</p>';open('co')}
+function place(){var f=$('#fn').value.trim(),p=$('#ph').value.trim(),a=$('#ad').value.trim();
+if(!f||p.replace(/\D/g,'').length<9||!a){$('#er').textContent='Please enter your name, a valid phone number and your address.';return}
+var id='WS-'+Math.random().toString(36).slice(2,7).toUpperCase(),pm=document.querySelector('input[name=pm]:checked').value;
+var m='New Wearstyle order '+id+'\n\n'+cart.map(function(l){return l.qty+' × '+l.name+' (size '+l.size+') — '+mad(l.price*l.qty)}).join('\n')+'\n\nSubtotal: '+mad(sub())+'\nShipping: '+(ship()?mad(ship()):'Free')+'\nTOTAL: '+mad(sub()+ship())+'\nPayment: '+pm+' on delivery\n\nName: '+f+'\nPhone: '+p+'\nZone: '+$('#nb').value+', Casablanca\nAddress: '+a+($('#nt').value?'\nNotes: '+$('#nt').value:'');
+var wa=(D.wa||'').replace(/\D/g,'');
+$('#cob').innerHTML='<p class="ok">✓ Order '+id+' ready</p><p>Last step: send your order to us on WhatsApp so we can confirm delivery. You’ll pay <b>'+mad(sub()+ship())+'</b> by '+pm.toLowerCase()+' when it arrives.</p>'+(wa?'<a href="https://wa.me/'+wa+'?text='+encodeURIComponent(m)+'" target="_blank" rel="noopener"><button class="btn" style="width:100%">Send order on WhatsApp</button></a>':'<p class="err">The store’s WhatsApp number isn’t set yet. Copy your order below and send it to us.</p><textarea rows="9" readonly>'+esc(m)+'</textarea>');
+cart=[];renderCart()}
+/* admin */
+function resize(file){return new Promise(function(res){var r=new FileReader();r.onload=function(){var i=new Image();i.onload=function(){var s=Math.min(1,600/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*s;c.height=i.height*s;c.getContext('2d').drawImage(i,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.78))};i.src=r.result};r.readAsDataURL(file)})}
+function admin(){$('#admb').innerHTML='<p class="note">Changes publish to your live store and the page reloads.</p><h4>Add a product</h4><label>Name</label><input id="an"><div class="two"><div><label>Price (MAD)</label><input id="apr" type="number" min="1"></div><div><label>Type</label><select id="ac"><option value="tshirt">T-shirt</option><option value="hoodie">Hoodie</option></select></div></div><div class="two"><div><label>Sizes</label><input id="asz" value="S,M,L,XL"></div><div><label>Color</label><input id="aco" type="color" value="#1c1c1c"></div></div><label>Description</label><input id="ad2"><label>Photo (optional)</label><input id="ai" type="file" accept="image/*"><div class="err" id="ae"></div><button class="btn" id="addP" style="width:100%;margin-top:14px">Add product</button>'+
+'<h4 style="margin-top:28px">Products</h4>'+D.products.map(function(p){return'<div class="row"><span>'+esc(p.name)+' · '+mad(p.price)+'</span><button data-del="'+p.id+'">Delete</button></div>'}).join('')+
+'<h4 style="margin-top:28px">Order WhatsApp number</h4><label>International format, e.g. 212612345678</label><input id="wa" value="'+esc(D.wa||'')+'"><button class="btn o" id="saveWa" style="margin-top:10px">Save number</button><div class="err" id="pe"></div>';open('adm')}
+async function pub(){try{var a=await claude.use('artifact');if(!a){$('#pe').textContent='Publishing unavailable here.';return}
+var c=document.documentElement.cloneNode(true);c.querySelectorAll('[data-r]').forEach(function(e){e.innerHTML=''});c.querySelectorAll('.open').forEach(function(e){e.classList.remove('open')});c.querySelector('#data').textContent=JSON.stringify(D).replace(/</g,'\\u003c');c.querySelector('#admB').hidden=true;
+await a.publish('<!doctype html>\n'+c.outerHTML)}catch(e){var x=$('#pe')||$('#ae');if(x)x.textContent='Could not publish: '+(e&&e.message||e.code||'error')}}
+document.addEventListener('click',async function(e){var t=e.target.closest('button');if(!t)return;
+if(t.id==='cartB'){renderCart();open('cart')}else if(t.id==='admB')admin();else if(t.hasAttribute('data-close'))closeAll();
+else if(t.dataset.f){filter=t.dataset.f;document.querySelectorAll('#tabs button').forEach(function(b){b.classList.toggle('on',b===t)});grid()}
+else if(t.dataset.s){var q=t.dataset.s.split('|');sel[q[0]]=q[1];grid()}
+else if(t.dataset.add){var p=D.products.find(function(x){return x.id===t.dataset.add}),s=sel[p.id]||p.sizes[0],f=cart.find(function(l){return l.id===p.id&&l.size===s});if(f)f.qty++;else cart.push({id:p.id,name:p.name,price:p.price,color:p.color,img:p.img,cat:p.cat,size:s,qty:1});renderCart();open('cart')}
+else if(t.dataset.q){var z=t.dataset.q.split('|');cart[+z[0]].qty+=+z[1];if(cart[+z[0]].qty<1)cart.splice(+z[0],1);renderCart()}
+else if(t.id==='goCo')checkout();else if(t.id==='place')place();
+else if(t.id==='addP'){var n=$('#an').value.trim(),pr=+$('#apr').value;if(!n||!(pr>0)){$('#ae').textContent='Enter a name and a price.';return}
+var np={id:'p'+Date.now().toString(36),name:n,price:pr,cat:$('#ac').value,color:$('#aco').value,sizes:$('#asz').value.split(',').map(function(s){return s.trim()}).filter(Boolean),desc:$('#ad2').value.trim()};
+var fl=$('#ai').files[0];if(fl)np.img=await resize(fl);D.products.unshift(np);pub()}
+else if(t.dataset.del){D.products=D.products.filter(function(p){return p.id!==t.dataset.del});pub()}
+else if(t.id==='saveWa'){D.wa=$('#wa').value.replace(/\D/g,'');pub()}});
+$('#ov').addEventListener('click',closeAll);
+try{cart=JSON.parse(localStorage.getItem('ws_cart')||'[]')}catch(e){}
+if(D.wa)$('#contact').innerHTML='WhatsApp: <a style="color:inherit" href="https://wa.me/'+D.wa+'">+'+D.wa+'</a>';
+grid();renderCart();
+(async function(){try{var u=await claude.use('user');if(u&&await u.canEdit()){$('#admB').hidden=false}}catch(e){}})();
+</script></body></html>
